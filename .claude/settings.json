@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\(Object.keys\\(l\\).filter\\(k => /share|link|send|at|message|heart|star|globe/i.test\\(k\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3456)",
+      "WebFetch(domain:elementor.com)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(which chromium-browser 2>/dev/null || which google-chrome 2>/dev/null || \\\\ *)",
+      "Read(//Applications/**)",
+      "Bash(sips -c 120 1440 /tmp/thetravelr_hero.png --out /tmp/thetravelr_header_crop.png)"
     ]
   }
 }

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Forest green rounded background -->
+  <rect width="32" height="32" rx="7.5" fill="#27724b"/>
+
+  <!-- Leaf body -->
+  <path
+    fill="white"
+    d="M16 6
+       C 16 6, 9 10.5, 9 17.5
+       a 7 7 0 0 0 14 0
+       C 23 10.5 16 6 16 6 Z"
+  />
+
+  <!-- Center vein (dark green on white) -->
+  <line x1="16" y1="11" x2="16" y2="24.5"
+    stroke="#27724b" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Right vein -->
+  <line x1="16" y1="15" x2="19.5" y2="18.5"
+    stroke="#27724b" stroke-width="1.1" stroke-linecap="round"/>
+
+  <!-- Left vein -->
+  <line x1="16" y1="13" x2="12.5" y2="16.5"
+    stroke="#27724b" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

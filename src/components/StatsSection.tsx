@@ -1,29 +1,29 @@
-import { Download, Map, Globe, Users } from "lucide-react";
+import { Layers, Globe, Smartphone, Calendar } from "lucide-react";
 
 const stats = [
   {
-    icon: Download,
-    value: "50K+",
-    label: "App Downloads",
-    sub: "and growing every day",
-  },
-  {
-    icon: Map,
-    value: "120K+",
-    label: "Journeys Shared",
-    sub: "from every continent",
+    icon: Layers,
+    value: "6",
+    label: "Core Features",
+    sub: "built and ready for launch",
   },
   {
     icon: Globe,
     value: "180+",
-    label: "Countries Covered",
-    sub: "no corner left unexplored",
+    label: "Countries Supported",
+    sub: "destinations ready to explore",
   },
   {
-    icon: Users,
-    value: "35K+",
-    label: "Active Travelers",
-    sub: "posting stories monthly",
+    icon: Smartphone,
+    value: "Android",
+    label: "Native App",
+    sub: "launching on Google Play",
+  },
+  {
+    icon: Calendar,
+    value: "2026",
+    label: "Founded",
+    sub: "built for the next generation of travelers",
   },
 ];
 
@@ -38,20 +38,17 @@ export default function StatsSection() {
         {/* Header */}
         <div className="text-center mb-14">
           <span className="inline-block text-forest-300 text-sm font-semibold tracking-widest uppercase mb-3">
-            By the Numbers
+            What We&apos;re Building
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            A Community Built on Real Adventures
+            A Platform Built for Real Adventurers
           </h2>
         </div>
 
         {/* Stats grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map(({ icon: Icon, value, label, sub }) => (
-            <div
-              key={label}
-              className="text-center group"
-            >
+            <div key={label} className="text-center group">
               <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-white/15 transition-colors">
                 <Icon className="w-6 h-6 text-forest-200" strokeWidth={1.8} />
               </div>
@@ -66,14 +63,15 @@ export default function StatsSection() {
           ))}
         </div>
 
-        {/* Bottom quote */}
+        {/* Founder quote */}
         <div className="mt-16 text-center">
           <blockquote className="text-forest-100/80 text-lg md:text-xl italic max-w-2xl mx-auto leading-relaxed">
-            &ldquo;TheTravelr changed how I document and share my adventures.
-            It&apos;s the only app that truly understands the wanderer&apos;s soul.&rdquo;
+            &ldquo;We&apos;re building TheTravelr because the world&apos;s best
+            travel stories deserve a better home than a generic social
+            feed.&rdquo;
           </blockquote>
           <cite className="text-forest-300 text-sm mt-3 block not-italic font-medium">
-            — Maya L., 🌍 Traveled to 47 countries
+            — Dipprokash Sardar, Founder of TheTravelr
           </cite>
         </div>
       </div>

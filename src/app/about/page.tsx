@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Leaf, Mail, MapPin, Globe, Heart, Users, Compass } from "lucide-react";
+import { Leaf, Mail, MapPin, Globe, Heart, Users, Compass, Camera, Map, Smartphone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaitlistButton from "@/components/WaitlistButton";
@@ -71,15 +71,15 @@ export default function AboutPage() {
                   Make every journey worth sharing
                 </h2>
                 <p className="text-charcoal-500 leading-relaxed mb-4">
-                  We&apos;re building a mobile-first platform where travelers can
-                  document their adventures in rich detail, share them with a
-                  community of like-minded explorers, and inspire the next wave
-                  of wanderers to step off the beaten path.
+                  TheTravelr is a native Android app and community platform that
+                  lets travelers document their journeys, share them with a global
+                  audience, and discover authentic destinations recommended by real
+                  people — not algorithms.
                 </p>
                 <p className="text-charcoal-500 leading-relaxed">
-                  TheTravelr is currently in development and launching soon on
-                  Google Play. We&apos;re building it carefully — because the
-                  world deserves a travel app that puts people before profit.
+                  The app is currently in active development, with a planned launch
+                  on Google Play. It is built on scalable cloud infrastructure to
+                  support a global community of travelers from day one.
                 </p>
               </div>
               <div className="bg-forest-50 rounded-3xl p-8 border border-forest-100">
@@ -88,6 +88,7 @@ export default function AboutPage() {
                     { label: "Founded", value: "2024" },
                     { label: "Stage", value: "Pre-launch" },
                     { label: "Platform", value: "Android (Google Play)" },
+                    { label: "Founder", value: "Dipprokash Sardar" },
                     { label: "Contact", value: "admin@thetravelr.app" },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex justify-between items-center border-b border-forest-100 pb-4 last:border-0 last:pb-0">
@@ -96,6 +97,90 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Product */}
+        <section className="py-20 px-6 bg-sage-50">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="inline-block text-forest-600 text-sm font-semibold tracking-widest uppercase mb-3 px-4 py-1.5 bg-white rounded-full border border-forest-100">
+                The Product
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mt-4 mb-4">
+                What TheTravelr Does
+              </h2>
+              <p className="text-charcoal-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                A native Android app that gives travelers a dedicated space to document,
+                share, and discover authentic travel experiences — powered by
+                community, not algorithms.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Camera,
+                  title: "Journey Journal",
+                  body: "Travelers document trips with photos, written notes, routes, and personal tips — creating a rich, shareable travel story rather than a simple photo dump.",
+                },
+                {
+                  icon: Map,
+                  title: "Discovery Feed",
+                  body: "A community-curated feed of real journeys, filtered by destination, activity type, or travel style. Content ranked by genuine community engagement.",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Travel Passport",
+                  body: "A personal profile that tracks every country visited, trail hiked, and milestone reached — giving travelers a visual record of their adventures over time.",
+                },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="bg-white rounded-2xl p-7 border border-sage-100 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-11 h-11 bg-forest-600 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+                  </div>
+                  <h3 className="text-lg font-bold text-charcoal-900 mb-2">{title}</h3>
+                  <p className="text-charcoal-500 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Founder */}
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-block text-forest-600 text-sm font-semibold tracking-widest uppercase mb-3 px-4 py-1.5 bg-forest-50 rounded-full border border-forest-100">
+                The Team
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mt-4">
+                Who&apos;s Building This
+              </h2>
+            </div>
+            <div className="flex flex-col md:flex-row items-center gap-10 bg-forest-50 rounded-3xl p-10 border border-forest-100">
+              <div className="w-24 h-24 rounded-full bg-forest-600 flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+                DS
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-charcoal-900 mb-1">Dipprokash Sardar</h3>
+                <p className="text-forest-600 font-semibold text-sm mb-4">Founder &amp; Builder</p>
+                <p className="text-charcoal-500 leading-relaxed">
+                  Dipprokash founded TheTravelr to solve a problem he experienced firsthand:
+                  the best travel stories are scattered across generic social platforms where
+                  they get buried by unrelated content. TheTravelr is his answer — a focused,
+                  community-first platform where every feature exists to serve the traveler.
+                  He is building the full product, from the Android app to the cloud backend,
+                  with a planned launch on Google Play.
+                </p>
+                <a
+                  href="mailto:admin@thetravelr.app"
+                  className="inline-flex items-center gap-2 text-forest-600 hover:text-forest-800 font-medium text-sm mt-4 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  admin@thetravelr.app
+                </a>
               </div>
             </div>
           </div>

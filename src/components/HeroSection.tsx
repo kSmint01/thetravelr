@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Star, Users, MapPin, ChevronDown } from "lucide-react";
+import { MapPin, ChevronDown, Smartphone, Star } from "lucide-react";
 import WaitlistButton from "@/components/WaitlistButton";
 
 export default function HeroSection() {
@@ -15,7 +15,6 @@ export default function HeroSection() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-900/70 to-forest-800/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent" />
       </div>
@@ -64,28 +63,21 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Social proof row */}
+          {/* Trust signals */}
           <div className="flex items-center gap-6 pt-2">
-            <div className="flex items-center gap-1.5">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 text-amber-400 fill-amber-400"
-                  />
-                ))}
-              </div>
-              <span className="text-white/80 text-sm">4.9 rating</span>
+            <div className="flex items-center gap-1.5 text-white/70 text-sm">
+              <Smartphone className="w-4 h-4 text-forest-300" />
+              Android · Google Play
             </div>
             <div className="w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-1.5 text-white/80 text-sm">
-              <Users className="w-4 h-4 text-forest-300" />
-              50K+ community members
+            <div className="flex items-center gap-1.5 text-white/70 text-sm">
+              <Star className="w-4 h-4 text-forest-300" />
+              6 core features built
             </div>
           </div>
         </div>
 
-        {/* Right column — floating stat cards */}
+        {/* Right column — app preview cards */}
         <div className="hidden lg:flex flex-col gap-4 items-end">
           <div className="animate-float" style={{ animationDelay: "0s" }}>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-64">
@@ -94,52 +86,35 @@ export default function HeroSection() {
                   <MapPin className="w-5 h-5 text-forest-300" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs">Latest journey</p>
+                  <p className="text-white/60 text-xs">Journey Journal</p>
                   <p className="text-white font-semibold text-sm">
-                    Patagonia, Chile
+                    Document every trip
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {["🧗", "🏕️", "🌲"].map((e, i) => (
-                    <div
-                      key={i}
-                      className="w-7 h-7 rounded-full bg-forest-600 border-2 border-white/30 flex items-center justify-center text-xs"
-                    >
-                      {e}
-                    </div>
-                  ))}
-                </div>
-                <span className="text-white/70 text-xs">+128 loved this</span>
-              </div>
+              <p className="text-white/60 text-xs leading-relaxed">
+                Photos, routes, tips and stories — all in one place, beautifully organised.
+              </p>
             </div>
           </div>
 
-          <div
-            className="animate-float"
-            style={{ animationDelay: "1.5s", marginRight: "2rem" }}
-          >
+          <div className="animate-float" style={{ animationDelay: "1.5s", marginRight: "2rem" }}>
             <div className="bg-forest-600/90 backdrop-blur-md border border-forest-400/30 rounded-2xl p-5 w-56">
               <p className="text-forest-100 text-xs font-medium mb-1">
-                Trending Destination
+                Discovery Feed
               </p>
-              <p className="text-white font-bold text-lg">🏔️ Swiss Alps</p>
-              <div className="mt-2 flex items-center gap-1">
-                <div className="flex-1 h-1.5 bg-forest-800/50 rounded-full overflow-hidden">
-                  <div className="h-full w-3/4 bg-forest-200 rounded-full" />
-                </div>
-                <span className="text-forest-200 text-xs">74%</span>
-              </div>
-              <p className="text-forest-200/70 text-xs mt-1">popularity score</p>
+              <p className="text-white font-bold text-lg">🌍 Explore Anywhere</p>
+              <p className="text-forest-200/70 text-xs mt-2 leading-relaxed">
+                Real journeys from real travelers — 180+ countries covered.
+              </p>
             </div>
           </div>
 
           <div className="animate-float" style={{ animationDelay: "0.8s" }}>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 w-52">
-              <p className="text-white/60 text-xs mb-1">New journeys today</p>
-              <p className="text-white font-bold text-2xl">+342</p>
-              <p className="text-forest-300 text-xs">↑ 18% from yesterday</p>
+              <p className="text-white/60 text-xs mb-1">Travel Passport</p>
+              <p className="text-white font-bold text-sm">Track your adventures</p>
+              <p className="text-forest-300 text-xs mt-1">Countries · trails · milestones</p>
             </div>
           </div>
         </div>
@@ -147,9 +122,7 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-white/50 text-xs tracking-widest uppercase">
-          Scroll
-        </span>
+        <span className="text-white/50 text-xs tracking-widest uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
       </div>
     </section>

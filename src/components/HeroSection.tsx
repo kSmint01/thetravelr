@@ -1,47 +1,6 @@
 import Image from "next/image";
 import { Star, Users, MapPin, ChevronDown } from "lucide-react";
-
-function GooglePlayBadge() {
-  return (
-    <a
-      href="https://play.google.com/store"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 bg-charcoal-900 hover:bg-charcoal-800 text-white px-6 py-3.5 rounded-2xl transition-all duration-200 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5 active:scale-95 group"
-    >
-      {/* Play Store icon */}
-      <svg
-        className="w-7 h-7 flex-shrink-0"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.18 1.5C2.78 1.73 2.5 2.16 2.5 2.65v18.7c0 .49.28.92.68 1.15l.1.05L13.5 12 3.28 1.45l-.1.05z"
-          fill="#4FC3F7"
-        />
-        <path
-          d="M17.25 8.25L13.5 12l3.75 3.75 4.18-2.41a1.28 1.28 0 000-2.18L17.25 8.25z"
-          fill="#FFB300"
-        />
-        <path
-          d="M13.5 12L3.18 22.5c.14.08.29.13.46.13.26 0 .51-.08.72-.22l11.38-6.56L13.5 12z"
-          fill="#F44336"
-        />
-        <path
-          d="M13.5 12L15.74 9.75 4.36 3.09C4.15 2.95 3.9 2.87 3.64 2.87c-.17 0-.32.05-.46.13L13.5 12z"
-          fill="#4CAF50"
-        />
-      </svg>
-      <div className="flex flex-col leading-tight">
-        <span className="text-[10px] text-white/70 font-medium tracking-wide uppercase">
-          Get it on
-        </span>
-        <span className="text-base font-bold tracking-tight">Google Play</span>
-      </div>
-    </a>
-  );
-}
+import WaitlistButton from "@/components/WaitlistButton";
 
 export default function HeroSection() {
   return (
@@ -71,7 +30,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full w-fit">
             <span className="w-2 h-2 rounded-full bg-forest-300 animate-pulse" />
-            Join 50,000+ Travelers Worldwide
+            Launching Soon on Google Play
           </div>
 
           {/* Headline */}
@@ -95,7 +54,7 @@ export default function HeroSection() {
 
           {/* CTA group */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-            <GooglePlayBadge />
+            <WaitlistButton variant="gradient" size="md" label="Get Early Access" />
             <a
               href="#journeys"
               className="text-white/80 hover:text-white text-sm font-medium flex items-center gap-1.5 transition-colors group"

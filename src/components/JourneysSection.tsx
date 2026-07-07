@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Heart, Eye, MapPin } from "lucide-react";
+import WaitlistButton from "@/components/WaitlistButton";
 
 const journeys = [
   {
@@ -106,14 +107,7 @@ export default function JourneysSection() {
               this week.
             </p>
           </div>
-          <a
-            href="https://play.google.com/store"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 border-2 border-forest-600 text-forest-700 hover:bg-forest-600 hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 text-sm whitespace-nowrap"
-          >
-            View all journeys →
-          </a>
+          <WaitlistButton variant="green" size="sm" label="View all journeys →" />
         </div>
 
         {/* Journey cards grid */}

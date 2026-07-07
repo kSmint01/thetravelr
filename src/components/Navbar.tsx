@@ -20,6 +20,7 @@ import {
   Baby,
   UserCheck,
 } from "lucide-react";
+import WaitlistButton from "@/components/WaitlistButton";
 
 /* ─── Announcement bar ─── */
 function AnnouncementBar({ onClose }: { onClose: () => void }) {
@@ -185,7 +186,7 @@ function NavDropdown({
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className={`flex items-center gap-1 text-sm font-medium transition-colors py-1 ${
+        className={`flex items-center gap-1 text-sm font-medium transition-colors px-4 py-1.5 rounded-lg ${
           isScrolled
             ? "text-charcoal-700 hover:text-forest-700"
             : "text-white/90 hover:text-white"
@@ -321,7 +322,7 @@ export default function Navbar() {
 
             <a
               href="#journeys"
-              className={`text-sm font-medium px-3 py-1 rounded-lg transition-colors ${navTextClass}`}
+              className={`text-sm font-medium px-4 py-1.5 rounded-lg transition-colors ${navTextClass}`}
             >
               Journeys
             </a>
@@ -330,28 +331,17 @@ export default function Navbar() {
               <DropdownPanel items={learnItems} columns={3} />
             </NavDropdown>
 
-            <a
-              href="#"
-              className={`text-sm font-medium px-3 py-1 rounded-lg transition-colors ${navTextClass}`}
+            <Link
+              href="/about"
+              className={`text-sm font-medium px-4 py-1.5 rounded-lg transition-colors ${navTextClass}`}
             >
-              Pricing
-            </a>
+              About
+            </Link>
           </nav>
 
           {/* Desktop right CTAs */}
           <div className="hidden lg:flex items-center gap-2">
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-forest-600 hover:bg-forest-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-forest-600/30 active:scale-[0.97]"
-            >
-              {/* Play icon */}
-              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z" />
-              </svg>
-              Get the App
-            </a>
+            <WaitlistButton variant="green" size="sm" label="Get Early Access" />
           </div>
 
           {/* Mobile hamburger */}
@@ -388,7 +378,7 @@ export default function Navbar() {
               {/* Flat links */}
               {[
                 { label: "Journeys", href: "#journeys" },
-                { label: "Pricing",  href: "#" },
+                { label: "About",    href: "/about" },
               ].map(({ label, href }) => (
                 <a
                   key={label}
@@ -420,17 +410,12 @@ export default function Navbar() {
             </div>
 
             {/* Buttons */}
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-forest-600 active:bg-forest-700 text-white font-semibold py-3.5 rounded-2xl text-sm transition-colors flex items-center justify-center gap-2.5 shadow-lg shadow-forest-600/20"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M6.3 2.84A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.27l9.344-5.891a1.5 1.5 0 000-2.538L6.3 2.84z" />
-              </svg>
-              Download on Google Play
-            </a>
+            <WaitlistButton
+              variant="green"
+              size="md"
+              label="Get Early Access"
+              className="w-full justify-center shadow-lg shadow-forest-600/20"
+            />
           </div>
         </div>
       )}

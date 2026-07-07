@@ -1,10 +1,31 @@
+import Link from "next/link";
 import { Leaf, Mail, MapPin, Share2, MessageCircle, Globe } from "lucide-react";
 
-const footerLinks = {
-  Product: ["Features", "Trending Journeys", "Community", "Changelog"],
-  Explore: ["Destinations", "Top Travelers", "Hidden Gems", "Travel Tips"],
-  Company: ["About Us", "Blog", "Careers", "Press Kit"],
-  Support: ["Help Center", "Privacy Policy", "Terms of Service", "Contact"],
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  Product: [
+    { label: "Features", href: "/#features" },
+    { label: "Trending Journeys", href: "/#journeys" },
+    { label: "Community", href: "/#community" },
+    { label: "Changelog", href: "#" },
+  ],
+  Explore: [
+    { label: "Destinations", href: "#" },
+    { label: "Top Travelers", href: "#" },
+    { label: "Hidden Gems", href: "#" },
+    { label: "Travel Tips", href: "#" },
+  ],
+  Company: [
+    { label: "About Us", href: "/about" },
+    { label: "Blog", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Press Kit", href: "#" },
+  ],
+  Support: [
+    { label: "Help Center", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Contact", href: "mailto:admin@thetravelr.app" },
+  ],
 };
 
 export default function Footer() {
@@ -17,18 +38,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 bg-forest-600 rounded-xl flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-white" strokeWidth={2.5} />
               </div>
               <span className="text-white text-xl font-bold tracking-tight">
                 TheTravelr
               </span>
-            </div>
+            </Link>
             <p className="text-charcoal-400 text-sm leading-relaxed max-w-xs mb-6">
               The community platform for passionate travelers. Share your
               journeys, discover hidden gems, and connect with explorers
-              worldwide.
+              worldwide. Launching soon on Google Play.
             </p>
 
             {/* Contact */}
@@ -42,7 +63,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5 text-charcoal-400">
                 <MapPin className="w-4 h-4 text-forest-500" />
-                Available worldwide on Google Play
+                Launching worldwide on Google Play
               </div>
             </div>
 
@@ -73,14 +94,27 @@ export default function Footer() {
                   {category}
                 </h4>
                 <ul className="flex flex-col gap-2.5">
-                  {links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-charcoal-400 hover:text-forest-300 text-sm transition-colors"
-                      >
-                        {link}
-                      </a>
+                  {links.map(({ label, href }) => (
+                    <li key={label}>
+                      {href.startsWith("mailto:") || href.startsWith("http") ? (
+                        <a
+                          href={href}
+                          className="text-charcoal-400 hover:text-forest-300 text-sm transition-colors"
+                        >
+                          {label}
+                        </a>
+                      ) : href === "#" ? (
+                        <span className="text-charcoal-600 text-sm cursor-default">
+                          {label}
+                        </span>
+                      ) : (
+                        <Link
+                          href={href}
+                          className="text-charcoal-400 hover:text-forest-300 text-sm transition-colors"
+                        >
+                          {label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -89,28 +123,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Download CTA strip */}
+        {/* Bottom strip */}
         <div className="border-t border-charcoal-800 pt-8 pb-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col sm:flex-row items-center gap-3">
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-forest-700 hover:bg-forest-600 text-white px-5 py-2.5 rounded-xl transition-all duration-200 text-sm font-semibold"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                <path d="M3.18 1.5C2.78 1.73 2.5 2.16 2.5 2.65v18.7c0 .49.28.92.68 1.15l.1.05L13.5 12 3.28 1.45l-.1.05z" fill="#4FC3F7" />
-                <path d="M17.25 8.25L13.5 12l3.75 3.75 4.18-2.41a1.28 1.28 0 000-2.18L17.25 8.25z" fill="#FFB300" />
-                <path d="M13.5 12L3.18 22.5c.14.08.29.13.46.13.26 0 .51-.08.72-.22l11.38-6.56L13.5 12z" fill="#F44336" />
-                <path d="M13.5 12L15.74 9.75 4.36 3.09C4.15 2.95 3.9 2.87 3.64 2.87c-.17 0-.32.05-.46.13L13.5 12z" fill="#4CAF50" />
-              </svg>
-              Download on Google Play
-            </a>
+          <div className="flex items-center gap-4 text-sm">
+            <Link href="/privacy" className="text-charcoal-500 hover:text-forest-300 transition-colors">
+              Privacy
+            </Link>
+            <span className="text-charcoal-700">·</span>
+            <Link href="/terms" className="text-charcoal-500 hover:text-forest-300 transition-colors">
+              Terms
+            </Link>
+            <span className="text-charcoal-700">·</span>
+            <Link href="/about" className="text-charcoal-500 hover:text-forest-300 transition-colors">
+              About
+            </Link>
           </div>
-
           <p className="text-charcoal-500 text-sm text-center">
-            © {currentYear} TheTravelr. All rights reserved. Made with 🌿 for
-            wanderers everywhere.
+            © {currentYear} TheTravelr. All rights reserved.
           </p>
         </div>
       </div>

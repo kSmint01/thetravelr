@@ -1,4 +1,5 @@
 import { Camera, Globe, Compass, MessageCircle, TrendingUp, Shield } from "lucide-react";
+import WaitlistButton from "@/components/WaitlistButton";
 
 const features = [
   {
@@ -108,14 +109,7 @@ export default function FeaturesSection() {
               Join thousands of travelers who share their journeys every day.
             </p>
           </div>
-          <a
-            href="https://play.google.com/store"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 bg-white text-forest-800 hover:bg-forest-50 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg text-sm whitespace-nowrap"
-          >
-            Download Free on Google Play →
-          </a>
+          <WaitlistButton variant="white" size="sm" label="Join the Waitlist →" />
         </div>
       </div>
     </section>

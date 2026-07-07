@@ -106,7 +106,7 @@ export default function FeaturesSection() {
               Ready to start your story?
             </h3>
             <p className="text-forest-200/80 text-sm">
-              Join thousands of travelers who share their journeys every day.
+              Be among the first travelers to share your journey on TheTravelr.
             </p>
           </div>
           <WaitlistButton variant="white" size="sm" label="Join the Waitlist →" />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Leaf, Mail, MapPin, Globe, Heart, Users, Compass, Camera, Map, Smartphone } from "lucide-react";
+import { Leaf, Mail, MapPin, Globe, Heart, Users, Compass, Camera, Map, Smartphone, Server, DollarSign } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WaitlistButton from "@/components/WaitlistButton";
@@ -85,8 +85,10 @@ export default function AboutPage() {
               <div className="bg-forest-50 rounded-3xl p-8 border border-forest-100">
                 <div className="flex flex-col gap-5">
                   {[
-                    { label: "Founded", value: "2024" },
+                    { label: "Founded", value: "2026" },
+                    { label: "Industry", value: "Travel Technology" },
                     { label: "Stage", value: "Pre-launch" },
+                    { label: "Location", value: "Remote (Global)" },
                     { label: "Platform", value: "Android (Google Play)" },
                     { label: "Founder", value: "Dipprokash Sardar" },
                     { label: "Contact", value: "admin@thetravelr.app" },
@@ -186,8 +188,58 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Values */}
+        {/* Technology & Infrastructure */}
         <section className="py-20 px-6 bg-sage-50">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="inline-block text-forest-600 text-sm font-semibold tracking-widest uppercase mb-3 px-4 py-1.5 bg-white rounded-full border border-forest-100">
+                Technology
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mt-4 mb-4">
+                Built on Google Cloud
+              </h2>
+              <p className="text-charcoal-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                TheTravelr is built entirely on Google Cloud Platform infrastructure,
+                designed to scale from day one to a global user base.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: Server,
+                  title: "Cloud-Native Backend",
+                  body: "Our backend APIs and data pipelines run on Google Cloud, using Firebase for real-time data sync, Cloud Storage for media, and Cloud Run for scalable serverless compute.",
+                },
+                {
+                  icon: Globe,
+                  title: "Global Scale by Design",
+                  body: "Content delivery, user authentication, and analytics are powered by GCP services — ensuring low latency for travelers in every corner of the world.",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Android-First",
+                  body: "The native Android app integrates directly with Google Play services, Maps SDK, and Firebase, keeping the full stack tightly aligned with the Google ecosystem.",
+                },
+                {
+                  icon: DollarSign,
+                  title: "Business Model",
+                  body: "TheTravelr operates on a freemium model — the core community features are free, with a premium subscription unlocking advanced journey analytics, offline access, and exclusive travel badges.",
+                },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="bg-white rounded-2xl p-7 border border-sage-100 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-11 h-11 bg-forest-600 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+                  </div>
+                  <h3 className="text-lg font-bold text-charcoal-900 mb-2">{title}</h3>
+                  <p className="text-charcoal-500 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="py-20 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-14">
               <span className="inline-block text-forest-600 text-sm font-semibold tracking-widest uppercase mb-3 px-4 py-1.5 bg-white rounded-full border border-forest-100">
